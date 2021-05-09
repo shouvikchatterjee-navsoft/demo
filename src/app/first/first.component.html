@@ -1,0 +1,8 @@
+<p>first works!</p>
+<ng-container *ngIf="showLoop">
+<ul>
+    <li *ngFor="let employee of employees;let i = index;trackBy:trackByFun">{{i+1}}. {{employee.name}} - {{employee.age}}</li>
+</ul>
+</ng-container>
+<button (click)="toggleLoop()">{{buttonText}}</button>
+<button (click)="refresh()" [disabled]="!showLoop">Refresh</button>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-second',
@@ -18,11 +19,10 @@ export class SecondComponent implements OnInit {
     {id:7,name:'Somu',age:60},
   ];
   myColor = 'red';
-  constructor() { }
+  constructor(private dataService:DataService) { }
 
   ngOnInit(): void {
-    console.log('Regular---getColor:',this.getColor());
-    console.log('Arrow----get:',this.get());
+    console.log('second teams:',this.dataService.teams);
   }
 
   onClick(){
@@ -49,17 +49,8 @@ export class SecondComponent implements OnInit {
     this.myColor = (this.myColor === 'red')?'green':'red';
   }
 
-  getColor(){
-    // console.log('this:',this);
-    return this.myColor;
-  }
-
-  get = () => {
-    console.log('this:',this);
-    return this.myColor;
-  }
-
-  }
+  
+}
 
   
 

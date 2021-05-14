@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-first',
@@ -16,11 +17,14 @@ export class FirstComponent implements OnInit {
     {id:5,name:'Prosen', age:20},
   ];
 
-  constructor() { }
+  constructor(private dataService:DataService) { 
+  
+  }
 
   
 
   ngOnInit(): void {
+    console.log('teams:',this.dataService.teams);
   }
 
   toggleLoop(){

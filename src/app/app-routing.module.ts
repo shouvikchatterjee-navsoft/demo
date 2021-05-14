@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { FirstComponent } from './first/first.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { SecondComponent } from './second/second.component';
+import { TemplateFormComponent } from './template-form/template-form.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path:'second',
     component:SecondComponent
+  },
+  {
+    path:'template',
+    component:TemplateFormComponent
   },
   {
     path:'**',

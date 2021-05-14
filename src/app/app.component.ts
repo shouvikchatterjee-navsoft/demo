@@ -17,11 +17,11 @@ export class AppComponent {
 
   }
 
-  /* clickFirst(){
-    this.router.navigate(['first']);
+  clickFirst(){
+    this.router.navigate(['/first']);
   }
 
-  clickSecond(){
-    this.router.navigate(['second']);
-  } */
+  openTemplate(){
+    this.router.navigate(['/template']);
+  }
 }

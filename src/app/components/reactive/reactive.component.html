@@ -1,0 +1,90 @@
+<div class="container">
+    <form [formGroup] = "empForm">
+        <h1>Employee Details</h1>
+    <div class="row">
+        <div class="col-4">
+            <mat-form-field appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="First Name" formControlName="firstName">
+                <mat-error *ngIf="empForm.get('firstName').errors?.required && empForm.get('firstName').touched">This is required.</mat-error>
+              </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Last Name" formControlName="lastName">
+                <mat-error *ngIf="empForm.get('lastName').errors?.required && empForm.get('lastName').touched">This is required.</mat-error>
+              </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" placeholder="email" formControlName="email">
+                <mat-error *ngIf="empForm.get('email').errors?.required && empForm.get('email').touched">This is required.</mat-error>
+                <mat-error *ngIf="empForm.get('email').errors?.email && empForm.get('email').touched">Email is invalid.</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Gender</mat-label>
+                <mat-select formControlName="gender">
+                  <mat-option value="male">
+                    Male
+                  </mat-option>
+                  <mat-option value="female">
+                    Female
+                  </mat-option>
+                  <mat-option value="others">
+                    Others
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="empForm.get('gender').errors?.required && empForm.get('gender').touched">This is required.</mat-error>
+              </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Date of birth</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="dob">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="empForm.get('dob').errors?.required && empForm.get('dob').touched">This is required.</mat-error>
+              </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Designation</mat-label>
+                <input matInput placeholder="Designation" formControlName="designation">
+              </mat-form-field>
+        </div>
+    </div>
+    <div class="row" formGroupName="address">
+        <h2>Address:</h2>
+        <div class="col-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Street</mat-label>
+                <input matInput placeholder="Street" formControlName="street">
+              </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Landmark</mat-label>
+                <input matInput placeholder="Landmark" formControlName="landMark">
+              </mat-form-field>
+        </div>
+        <div class="col-4">
+            <mat-form-field appearance="fill">
+                <mat-label>Pin</mat-label>
+                <input matInput placeholder="Pincode" formControlName="pinCode">
+              </mat-form-field>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <button mat-raised-button color="primary" [disabled]="empForm.invalid" (click)="onSubmit()">Submit</button>
+            <button mat-raised-button color="primary" class="mx-3" (click)="onReset()">Reset</button>
+        </div>
+    </div>
+    </form>
+</div>

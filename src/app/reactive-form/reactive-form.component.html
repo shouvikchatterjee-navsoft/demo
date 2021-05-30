@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  
+    <form [formGroup] = "skillForm">
+      <!-- <p>{{loginForm.controls.email?.errors | json}}</p> -->     
+      <button         
+      (click)="onAddSkill(skillForm)"
+      type="button" 
+      class="btn btn-primary my-3"
+      >Add Skill+</button>
+        <div 
+        *ngFor="let control of skills.controls; index as i"
+        class="form-group">          
+          <input     
+          [formControl]="skills.controls[i]"     
+          name="email" 
+          type="email" 
+          class="form-control"          
+        placeholder="Add Skill"
+          ><span (click)="onRemoveControl(i)">X</span>
+        </div>
+        
+        <!-- <small         
+        class="text-danger">This is required field.</small>
+        <small         
+        class="text-danger">You should enter {{loginForm.controls.email.errors.minlength.requiredLength}} characters.</small> -->
+        
+      </form>
+      
+      </div>

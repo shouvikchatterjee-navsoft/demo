@@ -18,10 +18,10 @@ export class AppComponent {
   }
 
   clickFirst(){
-    this.router.navigate(['/first']);
+    this.router.navigate(['first']);
   }
 
   openTemplate(){
-    this.router.navigate(['/template']);
+    this.router.navigate(['template']);
   }
 }

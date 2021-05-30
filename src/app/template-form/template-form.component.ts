@@ -10,6 +10,9 @@ export class TemplateFormComponent implements OnInit {
   date = new Date();
   pi: number = 3.14159265359;
   amount = 5000;
+username:string = 'shouvik@gmail.com';
+pass:string = '123456';
+
   constructor() { }
 
   ngOnInit(): void {

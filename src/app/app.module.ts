@@ -21,6 +21,11 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { LifecyclehooksComponent } from './components/lifecyclehooks/lifecyclehooks.component';
+import { MyParentComponent } from './components/my-parent/my-parent.component';
+import { MyChildComponent } from './components/my-child/my-child.component';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
+import {HttpClientModule} from '@angular/common/http';
+import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,11 @@ import { LifecyclehooksComponent } from './components/lifecyclehooks/lifecycleho
     ParentComponent,
     ChildComponent,
     ReactiveComponent,
-    LifecyclehooksComponent
+    LifecyclehooksComponent,
+    MyParentComponent,
+    MyChildComponent,
+    EmployeeListComponent,
+    EmployeeFormComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +55,8 @@ import { LifecyclehooksComponent } from './components/lifecyclehooks/lifecycleho
     MatInputModule,
     MatSelectModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

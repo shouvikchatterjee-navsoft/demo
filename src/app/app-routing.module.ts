@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
+import { EmployeeListComponent } from './components/employee-list/employee-list.component';
 import { ReactiveComponent } from './components/reactive/reactive.component';
 import { FirstComponent } from './first/first.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -34,9 +36,22 @@ const routes: Routes = [
     component:ReactiveComponent
   },
   {
+    path:'employees',
+    component:EmployeeListComponent
+  },
+  {
+    path:'add-employee',
+    component:EmployeeFormComponent
+  },
+  {
+    path:'edit-employee/:id',
+    component:EmployeeFormComponent
+  },
+  {
     path:'**',
     component:NotFoundComponent
   }
+ 
 ];
 
 @NgModule({

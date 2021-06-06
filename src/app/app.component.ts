@@ -13,6 +13,8 @@ export class AppComponent {
   num1 = 10;
   num2 = 20;
 
+  data;
+
   constructor(private router:Router){
 
   }
@@ -23,5 +25,9 @@ export class AppComponent {
 
   openTemplate(){
     this.router.navigate(['template']);
+  }
+
+  onSend(){
+    this.data = 'Kunal';
   }
 }

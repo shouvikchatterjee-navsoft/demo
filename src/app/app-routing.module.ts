@@ -48,9 +48,13 @@ const routes: Routes = [
     component:EmployeeFormComponent
   },
   {
+    path:'todo',
+    loadChildren: () => import('./todo/todo.module').then(m=>m.TodoModule)
+  },
+  {
     path:'**',
     component:NotFoundComponent
-  }
+  },
  
 ];
 

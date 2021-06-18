@@ -1,0 +1,10 @@
+<div class="row mt-3">
+    <div *ngFor="let item of todoList">
+        <div class="col alert alert-info d-flex justify-content-between align-items-center">
+            <div>{{item.todo}}</div>
+            <button mat-icon-button color="warn">
+                <mat-icon (click)="onDelete(item)">close</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>
